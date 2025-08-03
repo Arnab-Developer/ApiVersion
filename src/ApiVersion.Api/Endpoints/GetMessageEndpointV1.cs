@@ -6,13 +6,13 @@ internal static class GetMessageEndpointV1
         ApiVersionSet apiVersionSet, AspApiVersions apiVersions)
     {
         builder
-            .MapGet("get-message", HandleV1)
+            .MapGet("get-message", Handle)
             .WithApiVersionSet(apiVersionSet)
             .WithGroupName(apiVersions[0].ToString())
             .MapToApiVersion(apiVersions[0]);
     }
 
-    private static async Task<Results<Ok<string>, NotFound<string>>> HandleV1(string name)
+    private static async Task<Results<Ok<string>, NotFound<string>>> Handle(string name)
     {
         await Task.Delay(500);
         var message = $"Hello {name}";
