@@ -7,15 +7,21 @@ internal static class ApiVersionExtension
     public static void AddCustomApiVersioning(this IServiceCollection services,
         List<AspApiVersion> apiVersions)
     {
-        services.AddApiVersioning(options =>
-        {
-            options.DefaultApiVersion = apiVersions[0];
-            options.ReportApiVersions = true;
-            options.AssumeDefaultVersionWhenUnspecified = true;
+        services
+            .AddApiVersioning(options =>
+            {
+                options.DefaultApiVersion = apiVersions[0];
+                options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
 
-            options.ApiVersionReader = ApiVersionReader.Combine(
-                new QueryStringApiVersionReader("version"));
-        });
+                options.ApiVersionReader = ApiVersionReader.Combine(
+                    new QueryStringApiVersionReader("version"));
+            })
+            .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'version'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
     }
 
     public static ApiVersionSet GetApiVersionSet(this IEndpointRouteBuilder builder,
