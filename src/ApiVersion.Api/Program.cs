@@ -1,13 +1,6 @@
-using ApiVersion.Api.Endpoints;
-using ApiVersion.Api.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
-var apiVersions = new List<AspApiVersion>()
-{
-    new AspApiVersion(1, 0),
-    new AspApiVersion(2, 0)
-};
+var apiVersions = ApiVersionHelper.GetApiVersions();
 
 builder.Services.AddCustomOpenApi(apiVersions);
 builder.Services.AddCustomApiVersioning(apiVersions);
