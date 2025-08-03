@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{97AF1D22-CDC5-4575-82FE-18DDA2B32F9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiVersion.ApiTest", "test\ApiVersion.ApiTest\ApiVersion.ApiTest.csproj", "{DB6B3379-F977-4DB4-A232-FF7349863C72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,12 +28,17 @@ Global
 		{EB4510CB-2A2D-4126-8CAE-EA2A83733849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB4510CB-2A2D-4126-8CAE-EA2A83733849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB4510CB-2A2D-4126-8CAE-EA2A83733849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6B3379-F977-4DB4-A232-FF7349863C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6B3379-F977-4DB4-A232-FF7349863C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6B3379-F977-4DB4-A232-FF7349863C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6B3379-F977-4DB4-A232-FF7349863C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EB4510CB-2A2D-4126-8CAE-EA2A83733849} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DB6B3379-F977-4DB4-A232-FF7349863C72} = {97AF1D22-CDC5-4575-82FE-18DDA2B32F9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C39BA86-E861-49D9-8F0C-68A2B94CFCE2}
