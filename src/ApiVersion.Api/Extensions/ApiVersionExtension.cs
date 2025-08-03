@@ -5,12 +5,12 @@ namespace ApiVersion.Api.Extensions;
 internal static class ApiVersionExtension
 {
     public static void AddCustomApiVersioning(this IServiceCollection services,
-        AspApiVersions apiVersions)
+        AspApiVersion defaultApiVersion)
     {
         services
             .AddApiVersioning(options =>
             {
-                options.DefaultApiVersion = apiVersions.DefaultVersion;
+                options.DefaultApiVersion = defaultApiVersion;
                 options.ReportApiVersions = true;
                 options.AssumeDefaultVersionWhenUnspecified = true;
 
