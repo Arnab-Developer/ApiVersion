@@ -2,8 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 var apiVersions = ApiVersionHelper.GetApiVersions();
 
-builder.Services.AddCustomOpenApi(apiVersions);
 builder.Services.AddCustomApiVersioning(apiVersions.DefaultVersion);
+builder.Services.AddCustomOpenApi(apiVersions);
 
 var app = builder.Build();
 
