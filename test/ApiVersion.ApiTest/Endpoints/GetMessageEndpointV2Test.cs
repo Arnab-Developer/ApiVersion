@@ -2,13 +2,13 @@
 
 namespace ApiVersion.ApiTest.Endpoints;
 
-public partial class GetMessageEndpointV1Test
+public partial class GetMessageEndpointV2Test
     : IClassFixture<WebApplicationFactory<Program>>, IDisposable
 {
     private readonly HttpClient _client;
     private bool disposedValue;
 
-    public GetMessageEndpointV1Test(WebApplicationFactory<Program> factory)
+    public GetMessageEndpointV2Test(WebApplicationFactory<Program> factory)
     {
         _client = factory.CreateClient();
     }
@@ -37,7 +37,7 @@ public partial class GetMessageEndpointV1Test
     }
 
     // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-    ~GetMessageEndpointV1Test()
+    ~GetMessageEndpointV2Test()
     {
         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
         Dispose(false);
