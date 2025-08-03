@@ -2,8 +2,8 @@
 
 namespace ApiVersion.ApiTest.Endpoints;
 
-public partial class GetMessageEndpointV2Test
-    : IClassFixture<WebApplicationFactory<Program>>, IDisposable
+[Collection("WebApplicationFactoryCollection")]
+public partial class GetMessageEndpointV2Test : IDisposable
 {
     private readonly HttpClient _client;
     private bool disposedValue;
