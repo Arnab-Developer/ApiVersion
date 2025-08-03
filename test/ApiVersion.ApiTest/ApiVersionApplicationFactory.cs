@@ -7,24 +7,24 @@ namespace ApiVersion.ApiTest;
 
 public class ApiVersionApplicationFactory : WebApplicationFactory<Program>
 {
-    protected override IHostBuilder CreateHostBuilder()
-    {
-        var builder = Host
-            .CreateDefaultBuilder()
-            .ConfigureWebHostDefaults(x =>
-            {
-                x.UseStartup<Program>().Configure(c => { });
-            });
+    //protected override IHostBuilder CreateHostBuilder()
+    //{
+    //    var builder = Host
+    //        .CreateDefaultBuilder()
+    //        .ConfigureWebHostDefaults(x =>
+    //        {
+    //            x.UseStartup<Program>().Configure(c => { });
+    //        });
 
-        return builder;
-    }
+    //    return builder;
+    //}
 
-    protected override IHost CreateHost(IHostBuilder builder)
-    {
-        //builder.ConfigureServices(services => { });
+    //protected override IHost CreateHost(IHostBuilder builder)
+    //{
+    //    //builder.ConfigureServices(services => { });
 
-        //builder.ConfigureHostConfiguration(config => { });
+    //    //builder.ConfigureHostConfiguration(config => { });
 
-        return base.CreateHost(builder);
-    }
+    //    return base.CreateHost(builder);
+    //}
 }
