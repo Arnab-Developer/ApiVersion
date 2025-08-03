@@ -3,7 +3,7 @@
 internal static class GetMessageEndpointV1
 {
     public static void MapGetMessageEndpointV1(this IEndpointRouteBuilder builder,
-        ApiVersionSet apiVersionSet, List<AspApiVersion> apiVersions)
+        ApiVersionSet apiVersionSet, AspApiVersions apiVersions)
     {
         builder
             .MapGet("get-message", HandleV1)

@@ -2,14 +2,14 @@
 
 internal static class ApiVersionHelper
 {
-    public static List<AspApiVersion> GetApiVersions()
+    public static AspApiVersions GetApiVersions()
     {
-        var apiVersions = new List<AspApiVersion>()
+        var aspApiVersions = new AspApiVersions(new List<AspApiVersion>()
         {
             new AspApiVersion(1, 0),
             new AspApiVersion(2, 0)
-        };
+        });
 
-        return apiVersions;
+        return aspApiVersions;
     }
 }

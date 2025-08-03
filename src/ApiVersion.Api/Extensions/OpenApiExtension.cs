@@ -3,7 +3,7 @@
 internal static class OpenApiExtension
 {
     public static void AddCustomOpenApi(this IServiceCollection services,
-        List<AspApiVersion> apiVersions)
+        AspApiVersions apiVersions)
     {
         foreach (var apiVersion in apiVersions)
         {

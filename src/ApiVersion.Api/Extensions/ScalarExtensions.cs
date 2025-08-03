@@ -5,11 +5,12 @@ namespace ApiVersion.Api.Extensions;
 internal static class ScalarExtensions
 {
     public static void MapCustomScalarApiReference(this IEndpointRouteBuilder builder,
-        List<AspApiVersion> apiVersions)
+        AspApiVersions apiVersions)
     {
         builder.MapScalarApiReference(options =>
         {
-            options.AddDocuments(apiVersions.Select(v => v.ToString()));
+            var apiVersionsStrings = apiVersions.Select(v => v.ToString());
+            options.AddDocuments(apiVersionsStrings);
         });
     }
 }
