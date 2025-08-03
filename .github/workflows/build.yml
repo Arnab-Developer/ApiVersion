@@ -30,6 +30,9 @@ jobs:
     - name: Build
       run: dotnet build -c ${{ env.config }} --no-restore
 
+    - name: Test
+      run: dotnet test -c ${{ env.config }} --no-build
+
   codeql-analysis:    
     name: CodeQL analysis
     runs-on: ubuntu-latest
