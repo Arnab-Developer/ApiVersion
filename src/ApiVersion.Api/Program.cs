@@ -19,3 +19,5 @@ app.MapGetMessageEndpointV1(apiVersionSet, apiVersions); // Call with ?version=1
 app.MapGetMessageEndpointV2(apiVersionSet, apiVersions); // Call with ?version=2.0
 
 app.Run();
+
+public partial class Program;
