@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Asp.Versioning.Builder;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ApiVersion.Api.Endpoints;
 
 internal static class GetMessageEndpoint
 {
-    public static void MapGetMessageEndpoint(this IEndpointRouteBuilder builder)
+    public static void MapGetMessageEndpoint(this IEndpointRouteBuilder builder,
+        ApiVersionSet apiVersionSet, List<AspApiVersion> apiVersions)
     {
-        builder.MapGet("get-message", HandleV1);
+        builder
+            .MapGet("get-message", HandleV1)
+            .WithApiVersionSet(apiVersionSet)
+            .WithGroupName(apiVersions[0].ToString())
+            .MapToApiVersion(apiVersions[0]);
 
-        builder.MapGet("get-message", HandleV2);
+        builder
+            .MapGet("get-message", HandleV2)
+            .WithApiVersionSet(apiVersionSet)
+            .WithGroupName(apiVersions[1].ToString())
+            .MapToApiVersion(apiVersions[1]);
     }
 
     private static async Task<Results<Ok<string>, NotFound<string>>> HandleV1(string name)

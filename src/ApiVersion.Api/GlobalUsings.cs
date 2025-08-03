@@ -1,0 +1,1 @@
+﻿global using AspApiVersion = Asp.Versioning.ApiVersion;

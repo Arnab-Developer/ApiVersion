@@ -1,10 +1,17 @@
 using ApiVersion.Api.Endpoints;
+using ApiVersion.Api.Extensions;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
-builder.Services.AddApiVersioning();
+var apiVersions = new List<AspApiVersion>()
+{
+    new AspApiVersion(1, 0),
+    new AspApiVersion(2, 0)
+};
+
+builder.Services.AddCustomOpenApi(apiVersions);
+builder.Services.AddCustomApiVersioning(apiVersions);
 
 var app = builder.Build();
 
@@ -14,6 +21,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapGetMessageEndpoint();
+var apiVersionSet = app.GetApiVersionSet(apiVersions);
+app.MapGetMessageEndpoint(apiVersionSet, apiVersions);
 
 app.Run();
