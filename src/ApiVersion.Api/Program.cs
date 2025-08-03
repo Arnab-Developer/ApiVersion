@@ -22,6 +22,8 @@ if (app.Environment.IsDevelopment())
 }
 
 var apiVersionSet = app.GetApiVersionSet(apiVersions);
-app.MapGetMessageEndpoint(apiVersionSet, apiVersions);
+
+app.MapGetMessageEndpointV1(apiVersionSet, apiVersions);
+app.MapGetMessageEndpointV2(apiVersionSet, apiVersions);
 
 app.Run();
